@@ -2,15 +2,17 @@
 from commit import Commit
 # Importa la clase Rama desde el módulo rama
 from rama import Rama
+import random
 
 # Define la clase Repositorio, que representa un sistema de control de versiones
 class Repositorio:
     # Método constructor que se llama al crear una nueva instancia de la clase
     def __init__(self):
         # Inicializa un diccionario para almacenar las ramas del repositorio
-        self.ramas = {}
+        self.ramas = Rama()
         # Inicializa el atributo 'rama_actual' en None, indicando que no hay ninguna rama activa al principio
-        self.rama_actual = None
+        self.rama_actual = self.rama 
+        self.lista_ramas = [self.rama]  # Lista de ramas
 
     # Método para crear una nueva rama
     def crear_rama(self, nombre):
@@ -34,10 +36,18 @@ class Repositorio:
             print("No hay ninguna rama activa.")
             return  # Sale del método si no hay rama activa
 
-        # Calcula el ID del nuevo commit
-        id_commit = len(self.rama_actual.archivos) + 1 if self.rama_actual.commit_reciente is None else self.rama_actual.commit_reciente.id_commit + 1
+        """ Calcula el ID del nuevo commit
+        commit_id = len(self.rama_actual.archivos) + 1 if self.rama_actual.commit_reciente is None else self.rama_actual.commit_reciente.commit_id + 1"""
+
+        while True:
+            commit_id = str(random.randir(10000,99999))
+
+            if commit_id not in self.rama_actual.lista_id:
+                self.rama_actual.lista_id.append(commit_id)
+                break
+
         # Crea una nueva instancia de Commit con el ID, los archivos y el commit anterior
-        nuevo_commit = Commit(id_commit, archivos, self.rama_actual.commit_reciente)
+        nuevo_commit = Commit(commit_id, archivos, self.rama_actual.commit_reciente)
         # Actualiza el commit más reciente de la rama actual con el nuevo commit
         self.rama_actual.commit_reciente = nuevo_commit
         # Imprime un mensaje indicando que el commit ha sido realizado

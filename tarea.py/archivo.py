@@ -1,3 +1,6 @@
+from commit import Commit
+from random import randint
+
 #define la clase Archivo, que representa un archivo en el sistema de control de versiones (Sistema Git Simulado)
 class Archivo:
     #metodo constructor 

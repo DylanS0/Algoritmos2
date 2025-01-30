@@ -1,8 +1,5 @@
-# Importa la clase Archivo desde el módulo archivo
 from archivo import Archivo
-# Importa la clase Repositorio desde el módulo repositorio
 from repositorio import Repositorio
-
 # Define la función principal del programa
 def main():
     # Crea una instancia de la clase Repositorio, que representa el sistema de control de versiones
