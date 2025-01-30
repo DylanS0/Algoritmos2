@@ -1,10 +1,10 @@
-# Define la clase Archivo, que representa un archivo en el sistema de control de versiones
+# Define la clase Archivo, que representa un archivo en el sistema de control de versiones (Sistema Git Simulado)
 class Archivo:
-    # Método constructor que se llama al crear una nueva instancia de la clase
+    # Método constructor 
     def __init__(self, nombre, contenido):
-        # Inicializa el atributo 'nombre' con el valor proporcionado al crear el objeto
+        # Inicializa el atributo 'nombre' 
         self.nombre = nombre
-        # Inicializa el atributo 'contenido' con el valor proporcionado al crear el objeto
+        # Inicializa el atributo 'contenido' 
         self.contenido = contenido
 
     # Método especial que se llama cuando se convierte el objeto a una cadena (por ejemplo, al imprimirlo)
